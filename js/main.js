@@ -165,7 +165,7 @@ function clearErrors() {
 function showSuccess() {
     const successMsg = document.getElementById('formSuccess');
     if (successMsg) {
-        successMsg.textContent = 'Message sent successfully! (Demo - no actual email sent)';
+        successMsg.textContent = 'Message sent successfully!';
         successMsg.style.display = 'block';
 
         // Auto hide after 5 seconds
