@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nceba Xoyiya | Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="brand">
+                <div class="name">NCEBA XOYIYA</div>
+                <div class="profession">Software Engineer & Tech Enthusiast</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#project">Project</a></li>
+                <li><a href="index.html#contact" class="active">Contact</a></li>
+            </ul>
+            <div class="hamburger">☰</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-section">
+            <div class="container">
+                <h1>Get In Touch</h1>
+
+                <div class="contact-page-container">
+                    <div class="contact-info-large">
+                        <div class="contact-card">
+                            <div class="contact-icon-large">📞</div>
+                            <h3>Phone</h3>
+                            <p><a href="tel:+27717702912">+27 71 770 2912</a></p>
+                            <p class="availability">Available Mon-Fri, 9am-5pm</p>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon-large">✉️</div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:xoyiyanceba@gmail.com">xoyiyanceba@gmail.com</a></p>
+                            <p class="availability">I'll respond within 24 hours</p>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon-large">🔗</div>
+                            <h3>Social</h3>
+                            <div class="social-links-large">
+                                <a href="https://github.com/sirrnathan" target="_blank">GitHub</a>
+                                <a href="https://www.linkedin.com/in/nceba-xoyiya/" target="_blank">LinkedIn</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon-large">📍</div>
+                            <h3>Location</h3>
+                            <p>South Africa</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-large">
+                        <h2>Send Me a Message</h2>
+                        <p>Have a question or want to collaborate? Drop me a message!</p>
+
+                        <form id="contactPageForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Name *</label>
+                                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                                    <span class="error-message" id="nameError"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" placeholder="your.email@example.com"
+                                        required>
+                                    <span class="error-message" id="emailError"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="What's this about?">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="6" placeholder="Your message here..."
+                                    required></textarea>
+                                <span class="error-message" id="messageError"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <div id="formSuccess" class="success-message" style="display: none;"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NCEBA XOYIYA. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

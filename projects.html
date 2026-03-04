@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nceba Xoyiya | Projects</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="brand">
+                <div class="name">NCEBA XOYIYA</div>
+                <div class="profession">Software Engineer & Tech Enthusiast</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#project">Project</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">☰</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-section">
+            <div class="container">
+                <h1>Featured Project</h1>
+
+                <div class="project-detail">
+                    <div class="project-gallery-large">
+                        <img src="images/Admin Dashboard xnovest-meter-portal.JPG" alt="Admin Dashboard"
+                            class="project-main-img" id="mainProjectImage">
+                        <div class="project-thumbnails-large">
+                            <img src="images/Admin Dashboard xnovest-meter-portal.JPG" alt="Admin Dashboard"
+                                onclick="document.getElementById('mainProjectImage').src=this.src">
+                            <img src="images/Dashboard xnovest-meter-portal.JPG" alt="User Dashboard"
+                                onclick="document.getElementById('mainProjectImage').src=this.src">
+                            <img src="images/Graphical representation of meter-data.JPG" alt="Graphical Data"
+                                onclick="document.getElementById('mainProjectImage').src=this.src">
+                            <img src="images/Meter Readings.JPG" alt="Meter Readings"
+                                onclick="document.getElementById('mainProjectImage').src=this.src">
+                        </div>
+                    </div>
+
+                    <div class="project-info">
+                        <h2>Remote Data Acquisition for Smart Meter</h2>
+
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <strong>Technologies Used:</strong>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">HTML5</span>
+                                    <span class="tech-tag">CSS3</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">Express.js</span>
+                                    <span class="tech-tag">SQLite</span>
+                                    <span class="tech-tag">EJS</span>
+                                    <span class="tech-tag">Git</span>
+                                </div>
+                            </div>
+
+                            <div class="meta-item">
+                                <strong>Year:</strong> 2025
+                            </div>
+
+                            <div class="meta-item">
+                                <strong>Role:</strong> Lead Full-Stack Developer
+                            </div>
+                        </div>
+
+                        <div class="project-description-full">
+                            <h3>Overview</h3>
+                            <p><strong>xnovest-meter-portal</strong> is a web-based meter data management system
+                                specifically designed to address operational challenges faced by consulting engineers at
+                                Xnovest Africa. The system focuses on streamlining the process of accessing, analyzing,
+                                and reporting three-phase electrical consumption data, which forms the foundation for
+                                energy efficiency recommendations and system optimization strategies.</p>
+
+                            <h3>Key Features</h3>
+                            <ul>
+                                <li><strong>Role-Based Access Control (RBAC):</strong> Secure authentication with
+                                    different access levels for administrators and regular users.</li>
+                                <li><strong>Interactive Dashboards:</strong> Visual representation of meter data for
+                                    quick trend analysis.</li>
+                                <li><strong>CSV Export Functionality:</strong> Export raw data for further analysis in
+                                    external tools.</li>
+                                <li><strong>Data Isolation:</strong> Secure protocols ensuring client data
+                                    confidentiality.</li>
+                                <li><strong>Meter Reading Management:</strong> Centralized system for viewing and
+                                    managing three-phase electrical consumption data.</li>
+                            </ul>
+
+                            <h3>Technical Implementation</h3>
+                            <p>The application was built using the <strong>Node.js/Express.js</strong> stack with
+                                <strong>SQLite</strong> as the database. Server-side rendering was implemented using
+                                <strong>EJS templates</strong>. The system architecture follows MVC pattern for clean
+                                separation of concerns. Authentication is handled with session-based auth, and data
+                                visualization is implemented with Chart.js for interactive graphs.
+                            </p>
+
+                            <h3>Impact</h3>
+                            <p>This system enabled engineers at Xnovest to analyze consumption trends <strong>60%
+                                    faster</strong> than previous manual methods. The centralized data management
+                                improved team efficiency and provided a reliable foundation for energy efficiency
+                                recommendations to clients.</p>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://xnovest-meter-portal-3.onrender.com" class="btn btn-primary"
+                                target="_blank">Live Demo</a>
+                            <a href="https://github.com/sirrnathan/xnovest-meter-portal/tree/main"
+                                class="btn btn-outline" target="_blank">GitHub Repository</a>
+                            <a href="index.html#project" class="btn btn-outline">Back to Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NCEBA XOYIYA. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

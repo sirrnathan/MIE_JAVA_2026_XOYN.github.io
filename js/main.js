@@ -5,27 +5,76 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (hamburger) {
         hamburger.addEventListener('click', function () {
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-            }
+            navLinks.classList.toggle('show');
         });
     }
 
-    // Update active page in navigation
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navItems = document.querySelectorAll('.nav-links a');
+    // Handle navigation links
+    const links = document.querySelectorAll('.nav-links a');
 
-    navItems.forEach(link => {
-        const linkPage = link.getAttribute('href');
-        if (linkPage === currentPage) {
-            link.classList.add('active');
-        }
+    // Check if we're on a separate page (not index.html)
+    const isSeparatePage = !window.location.pathname.endsWith('index.html') &&
+        window.location.pathname !== '/' &&
+        !window.location.pathname.endsWith('/');
+
+    links.forEach(link => {
+        link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+
+            // If it's a hash link and we're on index.html, handle smooth scroll
+            if (href.includes('#') && (window.location.pathname.endsWith('index.html') ||
+                window.location.pathname === '/' ||
+                window.location.pathname.endsWith('/'))) {
+                e.preventDefault();
+
+                const targetId = href.split('#')[1];
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        navLinks.classList.remove('show');
+                    }
+
+                    // Smooth scroll to section
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                    // Update active class
+                    links.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            }
+            // Otherwise let the link behave normally (navigate to index.html#section)
+        });
     });
 
-    // Contact form validation
-    const contactForm = document.getElementById('contactForm');
+    // Update active nav link on scroll (only on index page)
+    if (!isSeparatePage) {
+        window.addEventListener('scroll', function () {
+            const sections = document.querySelectorAll('section');
+            const scrollPosition = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    const correspondingLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
+                    if (correspondingLink) {
+                        document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+                        correspondingLink.classList.add('active');
+                    }
+                }
+            });
+        });
+    }
+
+    // Contact form validation (works on both index and contact.html)
+    const contactForm = document.getElementById('contactForm') || document.getElementById('contactPageForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -88,8 +137,10 @@ function showError(fieldId, message) {
     const field = document.getElementById(fieldId);
     const errorSpan = document.getElementById(fieldId + 'Error');
 
-    field.classList.add('error');
-    errorSpan.textContent = message;
+    if (field && errorSpan) {
+        field.classList.add('error');
+        errorSpan.textContent = message;
+    }
 }
 
 // Helper function to clear all errors
@@ -113,26 +164,24 @@ function clearErrors() {
 // Helper function to show success
 function showSuccess() {
     const successMsg = document.getElementById('formSuccess');
-    successMsg.textContent = 'Message sent successfully! (Demo - no actual email sent)';
-    successMsg.style.display = 'block';
+    if (successMsg) {
+        successMsg.textContent = 'Message sent successfully! (Demo - no actual email sent)';
+        successMsg.style.display = 'block';
 
-    // Auto hide after 5 seconds
-    setTimeout(() => {
-        successMsg.style.display = 'none';
-    }, 5000);
+        // Auto hide after 5 seconds
+        setTimeout(() => {
+            successMsg.style.display = 'none';
+        }, 5000);
+    }
 }
 
 // Handle window resize for mobile menu
 window.addEventListener('resize', function () {
     const navLinks = document.querySelector('.nav-links');
-    const hamburger = document.querySelector('.hamburger');
-
     if (window.innerWidth > 768) {
+        navLinks.classList.remove('show');
         navLinks.style.display = 'flex';
     } else {
-        navLinks.style.display = 'none';
-        if (hamburger) {
-            hamburger.style.display = 'block';
-        }
+        navLinks.style.display = '';
     }
 });
