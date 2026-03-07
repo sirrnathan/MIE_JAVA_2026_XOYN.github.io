@@ -551,26 +551,6 @@ nav {
     color: var(--primary);
 }
 
-.social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 0.5rem;
-}
-
-.social-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    padding: 0.25rem 0.5rem;
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    transition: all 0.3s;
-}
-
-.social-links a:hover {
-    border-color: var(--primary);
-    color: var(--primary);
-}
-
 .contact-form {
     background-color: var(--card-bg);
     border: 1px solid var(--border);
@@ -670,6 +650,41 @@ footer {
     background-color: var(--surface);
     border-top: 1px solid var(--border);
     color: var(--text-secondary);
+}
+
+/* ===== SOCIAL MEDIA ICONS ===== */
+.social-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 0.25rem;
+    vertical-align: middle;
+    object-fit: contain;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.2);
 }
 
 /* ===== PAGE-SPECIFIC STYLES (CV, Projects, Contact pages) ===== */
@@ -1103,6 +1118,21 @@ footer {
     .contact-info-large {
         grid-template-columns: 1fr;
     }
+
+    /* Social links mobile */
+    .social-links {
+        justify-content: center;
+    }
+
+    .social-links a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .social-icon {
+        width: 12px;
+        height: 12px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1146,11 +1176,20 @@ footer {
         flex-direction: column;
         gap: 0.5rem;
     }
+
+    .social-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .social-links a {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* ===== PRINT STYLES (for CV page) ===== */
 @media print {
-
     header,
     footer,
     .btn {
